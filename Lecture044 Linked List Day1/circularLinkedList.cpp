@@ -118,6 +118,16 @@ bool isCircularList(Node* head) {
     while(temp != NULL && temp != head ) {
         temp = temp -> next;
     }
+    //Why the Loop Stops When temp == head
+/* The while loop condition is:
+cpp
+Copy code
+while(temp != NULL && temp != head)
+The loop stops if either:
+temp becomes NULL (indicating the list is not circular).
+temp == head (indicating the list is circular).
+Once temp == head, the loop stops. Then, the subsequent if (temp == head) confirms the circularity. 
+    */
 
     if(temp == head ) {
         return true;
